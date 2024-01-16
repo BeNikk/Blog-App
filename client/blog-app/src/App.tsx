@@ -1,15 +1,21 @@
-import Homelast from "./components/HomeLast";
-import Homepage from "./components/Homepage";
+import Homelast from "./components/HomepageComponents/HomeLast";
+
+import { BrowserRouter as BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import ImagePage from "./components/imagePage";
+import Home from "./components/Home";
+
 
 function App(){
   return(
     <>
     <Navbar/>
-    <Homepage/>
-    <ImagePage/>
-    <Homelast/>
+    
+    <BrowserRouter>
+    <Routes>
+    <Route path="/" element={<Home/>} />
+  </Routes>
+</BrowserRouter>
+
     </>
   )
 }
