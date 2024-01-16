@@ -1,12 +1,19 @@
 function ImagePage(){
     return(
         <>
-        <div className="flex flex-row items-center m-12 ">
-            <img src="/cover1.jpg" alt="" className=" w-[550px] h-[500px] ml-12"/>
-            <img src="/cover2.jpg" alt="" className="w-[750px] h-[500px]"/>
-            <img src="/cover3.jpg" alt="" className="w-[550px] h-[500px] mr-12"/>
- 
+        <div className="relative ml-12 mr-12 mt-8 h-[550px] overflow-hidden rounded-lg" style={{background: "linear-gradient(to top, white, white 80%, #b4b4fb)"}}>
+        <img src="/cover2.jpg" alt="Main Image" className="m-auto w-[980px] h-[980px]"/>
+        <img src="/cover1.jpg" alt="left Image" className="absolute top-[60px] left-[50px] w-[550px] h-[550px]" />
+        <img src="/cover3.jpg" alt="left Image" className="absolute top-[60px] right-[50px] w-[550px] h-[550px]" />
+
+
+   
+
+
+
+
         </div>
+            
         </>
     )
 }
