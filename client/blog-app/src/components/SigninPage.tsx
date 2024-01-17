@@ -1,6 +1,6 @@
 import Card from '@mui/material/Card';
 import TextField from '@mui/material/TextField';
-
+import { Link } from 'react-router-dom';
 
 function Signinpage(){
     return(
@@ -16,7 +16,7 @@ function Signinpage(){
             <br></br>
             <TextField id="outlined-basic" label="password" variant="outlined" className='m-4 mb-4 mt-4' />
             <button className="mt-12 bg-[#3168FA] text-white font-semibold rounded-full px-4 py-2 hover:bg-[#6414F8]">Signup</button>
-            <p className='text-1xl mt-8'>Dont have an account <a href="" className='text-[#2463eb]'>Signup</a></p>
+            <p className='text-1xl mt-8'>Dont have an account,<Link to='/signup' className='text-[#2463eb]'>Signup</Link></p>
 
 
 
