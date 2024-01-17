@@ -1,11 +1,13 @@
 import Card from '@mui/material/Card';
 import TextField from '@mui/material/TextField';
 import Richtext from './Create-blog-components/richtext';
+import Navbar from './Navbar';
 
 
 function CreateBlog(){
     return(
         <>
+        <Navbar/>
         <div className='w-[70%] h-full mt-10 ml-[10%] bg-gray-100'>
         <Card variant="outlined">
             <div className='flex flex-row items-center justify-center'>

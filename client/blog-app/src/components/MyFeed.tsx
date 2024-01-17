@@ -1,9 +1,11 @@
 import Card from '@mui/material/Card';
+import Navbar from './Navbar';
 
 function MyFeed(){
     return(
 
         <>
+        <Navbar/>
         <div>
         <Card className='w-[1000px] h-[150px] ml-[20%] mt-12 bg-gray-200 mb-4'>
             <div className='relative flex flex-row  justify-center object-contain'>

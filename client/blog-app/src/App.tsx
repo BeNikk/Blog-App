@@ -7,12 +7,13 @@ import CreateBlog from "./components/CreateBlog";
 import Signuppage from "./components/SignupPage";
 import Signinpage from "./components/SigninPage";
 import MyFeed from "./components/MyFeed";
+import MyProfile from "./components/myProfile";
 
 
 function App(){
   return(
     <>
-    <Navbar/>
+    
     
     <BrowserRouter>
     <Routes>
@@ -22,6 +23,7 @@ function App(){
 
     <Route path='/create-blog' element={<CreateBlog/>}/>
     <Route path='/myfeed' element={<MyFeed/>}/>
+    <Route path='/myprofile' element={<MyProfile/>}/>
   </Routes>
 </BrowserRouter>
 
