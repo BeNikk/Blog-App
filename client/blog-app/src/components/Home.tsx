@@ -1,6 +1,6 @@
 import Homelast from "./HomepageComponents/HomeLast";
-import Homepage from "./Homepage";
-import ImagePage from "./imagePage";
+import Homepage from "./HomepageComponents/Homepage";
+import ImagePage from "./HomepageComponents/imagePage";
 
 
 function Home(){
@@ -9,7 +9,7 @@ function Home(){
         <Homepage/>
         <ImagePage/>
         <Homelast/>
-    
+       
         
 
         </>
