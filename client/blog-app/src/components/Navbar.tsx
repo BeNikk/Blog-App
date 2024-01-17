@@ -1,5 +1,6 @@
-import Signin from "./Sigin";
-import Signup from "./Signup";
+import Signin from "./HomepageComponents/Sigin";
+import Signup from "./HomepageComponents/Signup";
+
 
 function Navbar(){
 
