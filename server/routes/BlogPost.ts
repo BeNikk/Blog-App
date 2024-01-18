@@ -7,3 +7,4 @@ router.post('/createblog',authenticateToken,createBlog);
 
 router.get('/myfeed',authenticateToken,getBlog);
 router.get('/post/:id',getSpecificBlog);
+export default router;

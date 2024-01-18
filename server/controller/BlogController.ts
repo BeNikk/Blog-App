@@ -6,7 +6,7 @@ app.use(express.json());
 export async function createBlog(req:Request,res:Response){
     const {blogTitle,blogContent}=req.body;
     const obj={blogTitle,blogContent};
-    const newBlog=new Blog();
+    const newBlog=new Blog(obj);
     await newBlog.save();
     res.json({message:"Blog successfully created"});
 
