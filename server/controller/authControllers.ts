@@ -10,6 +10,7 @@ export async function signup(req:Request,res:Response):Promise<void>{
     const {email,password}=req.body;
     if(!email){
         res.json({error:"no email"});
+        
     }
     const user= await User.findOne({email});
     if(user){

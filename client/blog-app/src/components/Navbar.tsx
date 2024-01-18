@@ -1,10 +1,20 @@
 import Signin from "./HomepageComponents/Sigin";
 import Signup from "./HomepageComponents/Signup";
 import { Link } from 'react-router-dom';
-
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 
 function Navbar(){
+    const [user,setUser]=useState(null);
+    
+    useEffect(()=>{
+        axios.get('http://localhost:3000/user/me').then(response=>{
+            setUser(response.data)
+
+        })
+
+    },[])
 
     return(
         <>
@@ -22,8 +32,21 @@ function Navbar(){
 
         </div>
         <div className="flex flex-row items-center justify-evenly">
+        {!user &&
+        <div>
         <Signin/>
         <Signup/>
+
+        </div>
+   
+        }
+        {user &&
+        <div>
+             <button className="hover:border rounded-full px-4 py-2 hover:border-[#475569]]"><Link to='/signin'>Logout</Link></button>
+
+        </div>
+        }
+        
 
         
 
