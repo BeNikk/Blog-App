@@ -4,11 +4,19 @@ import Navbar from './Navbar';
 import { useState, ChangeEvent,useRef } from 'react';
 import JoditEditor from 'jodit-react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 
 function CreateBlog(){
-    
+
+    const navigate=useNavigate();
+    const config = {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization':localStorage.getItem('token')
+        },
+      };
 
     
     const editor = useRef(null);
@@ -29,8 +37,9 @@ function CreateBlog(){
         blogContent:blogContent
     }
     function publish(){
-        axios.post('http:/localhost:3000/createblog',blog).then(res=>{
+        axios.post('http://localhost:3000/createblog',blog,config).then(res=>{
             console.log(res.data);
+            navigate('/myfeed');
         }).catch(error=>{
             console.log("error",error);
         })

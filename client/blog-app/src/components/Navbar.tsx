@@ -6,15 +6,28 @@ import { useEffect, useState } from "react";
 
 
 function Navbar(){
-    const [user,setUser]=useState(null);
-    
-    useEffect(()=>{
-        axios.get('http://localhost:3000/user/me').then(response=>{
-            setUser(response.data)
+    const [user, setUser] = useState(null);
 
-        })
-
-    },[])
+    useEffect(() => {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        // No token means not logged in
+        setUser(null);
+        return;
+      }
+  
+      axios.get('http://localhost:3000/user/me', {
+        headers: {
+          'Authorization': token
+        }
+      }).then(response => {
+        setUser(response.data);
+      }).catch(error => {
+        console.error('Authentication error:', error);
+        setUser(null); // Clear user state if authentication fails
+      });
+    }, []);
+  
 
     return(
         <>
@@ -33,7 +46,7 @@ function Navbar(){
         </div>
         <div className="flex flex-row items-center justify-evenly">
         {!user &&
-        <div>
+        <div className="flex flex-row justify-center items-center">
         <Signin/>
         <Signup/>
 
@@ -42,7 +55,7 @@ function Navbar(){
         }
         {user &&
         <div>
-             <button className="hover:border rounded-full px-4 py-2 hover:border-[#475569]]"><Link to='/signin'>Logout</Link></button>
+             <button className="hover:border rounded-full px-4 py-2 hover:border-[#475569]]" onClick={()=>{localStorage.removeItem('token')}}><Link to='/signin'>Logout</Link></button>
 
         </div>
         }

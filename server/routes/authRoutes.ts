@@ -7,7 +7,7 @@ router.post('/signup',signup);
 router.post('/signin',signin);
 router.get('/user/me',authenticateToken,(req:Request,res:Response)=>{
     if(!req.user){
-        res.json("unauthorized");
+       return res.json("unauthorized");
     }
     res.json(req.user);
     

@@ -1,15 +1,14 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 interface UserPayload {
-    // Add properties that you expect in your JWT payload
     id: string;
     username: string;
-    // etc...
+    
 }
 declare global {
     namespace Express {
         interface Request {
-            user?: UserPayload; // Extending Express' Request type
+            user?: UserPayload;
         }
     }
 }
@@ -34,7 +33,7 @@ export function authenticateToken(req:Request,res:Response,next:NextFunction):vo
         });
         
 
-        next();
+
 
 
 

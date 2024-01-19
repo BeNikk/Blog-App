@@ -8,6 +8,7 @@ import Signuppage from "./components/SignupPage";
 import Signinpage from "./components/SigninPage";
 import MyFeed from "./components/MyFeed";
 import MyProfile from "./components/myProfile";
+import BlogDetail from "./components/Blogdetail";
 
 
 function App(){
@@ -24,6 +25,7 @@ function App(){
     <Route path='/create-blog' element={<CreateBlog/>}/>
     <Route path='/myfeed' element={<MyFeed/>}/>
     <Route path='/myprofile' element={<MyProfile/>}/>
+    <Route path='/post/:blogId' element={<BlogDetail/>}/>
   </Routes>
 </BrowserRouter>
 

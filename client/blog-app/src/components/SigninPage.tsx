@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Signinpage(){
     const navigate = useNavigate();
+    
 
     const [email,setEmail]=useState('');
     const[password,setPassword]=useState('');
@@ -24,6 +25,8 @@ function Signinpage(){
     function Submit(){
         axios.post('http://localhost:3000/signin',postData).then(res=>{
             console.log(res.data);
+            const token=res.data.token;
+            localStorage.setItem('token',token);
             navigate('/myfeed');
         }).catch(error => {
             console.error('There was an error!', error);
@@ -45,7 +48,7 @@ function Signinpage(){
             <TextField id="outlined-basic" label="email" variant="outlined" className='m-4 mb-4 mt-4' onChange={handleChangeEmail} />
             <br></br>
             <TextField id="outlined-basic" label="password" variant="outlined" className='m-4 mb-4 mt-4' onChange={handleChangePass} />
-            <button className="mt-12 bg-[#3168FA] text-white font-semibold rounded-full px-4 py-2 hover:bg-[#6414F8]" onClick={Submit}>Signup</button>
+            <button className="mt-12 bg-[#3168FA] text-white font-semibold rounded-full px-4 py-2 hover:bg-[#6414F8]" onClick={Submit}>Signin</button>
             <p className='text-1xl mt-8'>Dont have an account,<Link to='/signup' className='text-[#2463eb]'>Signup</Link></p>
 
 
