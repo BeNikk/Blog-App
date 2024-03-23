@@ -1,7 +1,10 @@
 # Blog-App
 
-** A simple full stack blog application using React+tailwindCss\***
+** A simple full stack blog application using React+tailwindCss MongoDb. ExpressJS, Nodejs and Typescript\***
+
 <br/>
+Implemented Jodit for rich Text editor
+
 <br/>
 
 
